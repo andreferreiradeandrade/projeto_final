@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link href="style1.css" rel="stylesheet" type="text/css" />
+  <link href="style/stylecadastro.css" rel="stylesheet" type="text/css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
