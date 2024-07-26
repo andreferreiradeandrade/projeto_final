@@ -1,0 +1,95 @@
+html {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 5%, rgba(45, 9, 121, 1) 45%, rgba(43, 1, 128, 1) 77%);
+    margin-bottom: 30px;
+  }
+  
+  body {
+    height: 1000px;
+  }
+  
+  .menu_superior {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+  }
+  
+  .botao_entrar {
+    font-family: Helvetica, sans-serif;
+    height: 30px;
+    width: 100px;
+    font-weight: bolder;
+    color: white;
+    background-color: #1e849d;
+    border: none;
+    border-radius: 0px;
+    margin-top: 20px;
+  }
+  
+  .botao_saibamais {
+    font-family: Helvetica, sans-serif;
+    height: 30px;
+    width: 120px;
+    font-weight: bolder;
+    color: black;
+    border-radius: 0px;
+    background-color: white;
+    border: none;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  
+  .logtit {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 220px;
+    height: 130px;
+    /* Manter com 120px de diferença  */
+  }
+  
+  .nomemar {
+    font-family: "Montserrat Alternates";
+    color: white;
+    font-size: 15px;
+  }
+  
+  .conteudo_principal {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: "Montserrat Alternates";
+    margin-left: 70px;
+  }
+  
+  .textos_principais {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .criatividade {
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 70px;
+    margin-bottom: 0px;
+  }
+  
+  .harmonizando {
+    font-size: 20px;
+  }
+  
+  .cadastrar {
+    height: 40px;
+    width: 180px;
+    font-family: Helvetica, sans-serif;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-top: 30px;
+  }

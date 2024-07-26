@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgb(9, 0, 48);
+    background: linear-gradient(180deg, rgba(9, 0, 48, 1) 0%, rgba(15, 5, 88, 1) 59%, rgba(27, 13, 122, 1) 100%);
+  }
+  
+  body {
+    display: flex;
+    align-content: center;
+    margin-top: 100px;
+  }
+  
+  .divlogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 470px;
+    height: 250px;
+    display: flex;
+    align-self: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+  }
+  
+  .tit_cadastro {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: regular;
+  }
+  
+  .input_container {
+    width: 250px;
+  }
+  
+  .input_container label {
+    font-family: Lexend Deca;
+    color: white;
+  }
+  
+  .input_container input:focus {
+    font-size: 20px;
+    height: 30px;
+    transition: 0.2s;
+  }
+  
+  .input_container input:focus+label {
+    font-size: 10px;
+    transition: 0.2s;
+  }
+  
+  .input:placeholder-shown:not(:focus)+label {
+    font-size: 16px;
+    top: 0;
+    color: white;
+  }
+  
+  .input_container input {
+    font-family: Lexend Deca;
+    color: white;
+    background-color: transparent;
+    border-bottom: solid 1px white;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    width: 250px;
+    height: 10px;
+    margin-bottom: 20px;
+    outline: none;
+  }
+  
+  
+  .enviar {
+    font-family: Lexend Deca;
+    color: white;
+    background-color: transparent;
+    border: solid 1px white;
+    width: 120px;
+    height: 40px;
+    align-self: center;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-right: 100px;
+  }
+  
+  .enviar:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+  }
