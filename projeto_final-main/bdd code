@@ -23,3 +23,5 @@ publicacao_id_publi int not null,
 publicacao_usuario_id_usu int not null,
 foreign key (publicacao_id_publi) references publicacao (id_publi),
 foreign key (publicacao_usuario_id_usu) references usuario (id_usu));
+
+ALTER TABLE usuario MODIFY id_usu INT NOT NULL AUTO_INCREMENT;
