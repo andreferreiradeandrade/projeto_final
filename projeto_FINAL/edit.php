@@ -34,32 +34,52 @@ if (!empty($_GET['id_usu'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de Usuário</title>
+    <title>Editar perfil</title>
+    <link href="styleedit.css" rel="stylesheet" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+
 </head>
 <body>
     <div class="box">
         <form action="atualiza.php" method="POST">
-            <fieldset>
-                <legend><b>Editar Usuário</b></legend>
+            <div class= "fieldset">
+                <legend><b>ALTERE SEUS DADOS</b></legend>
                 <br>
+                <div class= "inputBox_todo">
                 <div class="inputBox">
+                    <label for="nome" class="labelInputNome">Nome</label>
                     <input type="text" name="nome" id="nome" class="inputUser" value="<?php echo htmlspecialchars($nome); ?>" required>
-                    <label for="nome" class="labelInput">Nome completo</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
+                    <label for="email" class="labelInputEmail">Email</label>
                     <input type="text" name="email" id="email" class="inputUser" value="<?php echo htmlspecialchars($email); ?>" required>
-                    <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="inputUser" value="<?php echo htmlspecialchars($senha); ?>" required>
-                    <label for="senha" class="labelInput">Senha</label>
+                    <label for="telefone" class="labelInputTelefone">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" class="inputUser" value="<?php echo htmlspecialchars($telefone); ?>" required>
                 </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="sobre" class="labelInputSobre">Sobre mim</label>
+                    <input type="text" name="sobre" id="sobre" class="inputUser" value="<?php echo htmlspecialchars($sobre); ?>" required>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="senha" class="labelInputSenha">Senha</label>
+                    <input type="text" name="senha" id="senha" class="inputUser" value="<?php echo htmlspecialchars($senha); ?>" required>
+                </div>
+</div>
 
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                <input type="submit" name="update" id="update" value="Atualizar">
-            </fieldset>
+                <input class= "atualizar_button" type="submit" name="update" id="update" value="ATUALIZAR">
+            </div>
         </form>
     </div>
 </body>
