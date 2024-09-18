@@ -17,10 +17,10 @@ if (isset($_POST['update'])) {
     }
 
     // Redireciona de volta para a página de perfil
-    header('Location: perfil.php');
+    header('Location: perfil12.php');
     exit;
 } else {
-    header('Location: perfil.php');
+    header('Location: perfil12.php');
     exit;
 }
 ?>

@@ -58,17 +58,17 @@ if (!empty($_GET['id_usu'])) {
                 <br><br>
                 <div class="inputBox">
                     <label for="email" class="labelInputEmail">Email</label>
-                    <input type="text" name="email" id="email" class="inputUser" value="<?php echo htmlspecialchars($email); ?>" required>
+                    <input type="text" name="email" id="email" class="inputUser" value="<?php echo htmlspecialchars($email); ?>" >
                 </div>
                 <br><br>
                 <div class="inputBox">
                     <label for="telefone" class="labelInputTelefone">Telefone</label>
-                    <input type="text" name="telefone" id="telefone" class="inputUser" value="<?php echo htmlspecialchars($telefone); ?>" required>
+                    <input type="text" name="telefone" id="telefone" class="inputUser" value="<?php echo htmlspecialchars($telefone); ?>" >
                 </div>
                 <br><br>
                 <div class="inputBox">
                     <label for="sobre" class="labelInputSobre">Sobre mim</label>
-                    <input type="text" name="sobre" id="sobre" class="inputUser" value="<?php echo htmlspecialchars($sobre); ?>" required>
+                    <input type="text" name="sobre" id="sobre" class="inputUser" value="<?php echo htmlspecialchars($sobre); ?>" >
                 </div>
                 <br><br>
                 <div class="inputBox">

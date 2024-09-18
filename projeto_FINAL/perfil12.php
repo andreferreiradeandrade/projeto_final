@@ -96,9 +96,9 @@ $con->close();
 
         <a href='edit.php?id_usu=<?= htmlspecialchars($user_data['id_usu']) ?>'><img class="edit_button" src='img/editing.png' /></a>
 
-    <?php else: ?>
+    <?php else:?>
        <p>Usuário não encontrado.</p>
-    <?php endif; ?>
+    <?php endif;?>
 
 
   </div>
