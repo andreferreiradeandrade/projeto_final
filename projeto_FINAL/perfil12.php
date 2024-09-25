@@ -15,7 +15,7 @@ $usuario = $_SESSION['usuario'];
 
 $sql = "SELECT * FROM usuario WHERE nome = ?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("s", $usuario);
+$stmt->bind_param("i", $_SESSION['usuario']);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -90,7 +90,7 @@ $con->close();
         <p class="infos_txt_esp">Nome: <?= htmlspecialchars($user_data['nome']); ?></p>
         <p class="infos_txt_esp">Email: <?= htmlspecialchars($user_data['email']); ?></p> 
         <p class="infos_txt_esp">Telefone: <?= htmlspecialchars($user_data['telefone']); ?></p>
-        <p class="infos_txt_esp">Sobre mim: <?= htmlspecialchars($user_data['sobre']); ?></p>
+        <p class="infos_txt_esp">Sobre mim: <?= htmlspecialchars($user_data['mais']); ?></p>
 
         <div class="space_between_edit_button"></div>
 
