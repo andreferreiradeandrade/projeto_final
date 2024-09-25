@@ -5,12 +5,16 @@ if (isset($_POST['update'])) {
     $id = intval($_POST['id']); // Obtém o ID do formulário
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
+    $sobre = $_POST['sobre'];
 
-    $sqlatualiza = "UPDATE usuario SET nome='$nome', email='$email', senha='$senha' WHERE id_usu='$id'";
+    $sqlatualiza = "UPDATE usuario SET nome='$nome', email='$email', telefone='$telefone', senha='$senha', mais='$sobre' WHERE id_usu='$id'";
     $result = $con->query($sqlatualiza);
 
     if ($result) {
+        $_SESSION['usuario'] = $nome;
+        $_SESSION['id_usu'] = $id;
         echo "Dados atualizados com sucesso!";
     } else {
         echo "Erro ao atualizar dados: " . $con->error;
