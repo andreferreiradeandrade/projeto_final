@@ -1,19 +1,18 @@
 create table usuario(
 id_usu int not null primary key,
-nome varchar(30) not null,
+nome varchar(45) not null,
 email varchar (70),
-categoria boolean not null,
+categoria tinyint not null,
 telefone varchar(14),
-senha varchar(45) not null,
+senha varchar(100) not null,
 mais varchar (100));
 
-create table publicacao(
+create table publicacoes(
 id_publi int not null primary key,
-likes int,
-conteudo varchar(140) not null,
+legenda varchar(140) not null,
 data_e_hora datetime,
-usuario_id_usu int not null,
-foreign key (usuario_id_usu) references usuario (id_usu));
+publi_id_usuarios int,
+foreign key (publi_id_usuarios) references usuario (id_usu));
 
 create table comentario(
 id_coment int not null,
