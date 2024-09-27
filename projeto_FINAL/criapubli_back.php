@@ -50,7 +50,15 @@ if(! isset($_SESSION['id_usuario'])){
 if(isset($_POST['conteudo'])){
     $conteudo = $_POST['conteudo'];
     $id_usuario = $_SESSION['id_usuario'];
-    $sql = "INSERT INTO publicacoes"
+    $sql = "INSERT INTO publicacoes(id_usuario, conteudo) VALUES (?, ?)";
+    $stmt = conn->prepare($sql);
+    $stmt->bind_param("is", $id_usuario, $conteudo);
+
+    if ($stmt -> execute()){
+        echo"Publicação inserida com sucesso";
+    }else{
+        echo"Erro ao publicar";
+    }
 }
 
 ?>
