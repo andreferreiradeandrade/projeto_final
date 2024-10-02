@@ -2,6 +2,42 @@
 <html lang="pt-br">
 
 
+<?php
+session_start();
+
+
+if (empty($_SESSION['usuario'])) {
+    echo "<script>location.href='login.php';</script>"; // Redireciona para a página de login se não estiver logado
+    exit;
+}
+
+include_once('conexao.php'); 
+
+
+$usuario = $_SESSION['usuario'];
+
+
+$sql = "SELECT * FROM publicacoes";
+$stmt = $con->prepare($sql);
+$stmt->bind_param("i", $_SESSION['usuario']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result === false) {
+    die("Erro na consulta: " . $con->error);
+}
+
+
+$user_data = $result->fetch_assoc();
+
+
+$stmt->close();
+$con->close();
+
+
+?>
+
+
 
 <head>
   <meta charset="utf-8">
@@ -71,6 +107,7 @@
       
     <div class="space_cont_bar"></div>
 
+    <?php if (isset($user_data)): ?>
 
       
       <div class="cont_feed_publi">
@@ -93,6 +130,10 @@
         <div class="cont_feed_publi_text">
         </div>
       </div>
+
+      <?php else:?>
+ <p>Usuário não encontrado.</p>
+<?php endif;?>
 
       
     </div>
