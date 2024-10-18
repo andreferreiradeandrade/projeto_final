@@ -1,7 +1,7 @@
 <?php
 $dbhost = 'localhost';
-$user = 'aluno';
-$senha = 'ceep';
+$user = 'root';
+$senha = '';
 $db = 'mlink';
 
 $con = new mysqli($dbhost, $user, $senha, $db);

@@ -3,7 +3,9 @@ include_once('conexao.php');
 
 $nome = '';
 $email = '';
+$telefone = '';
 $senha = '';
+$sobre = '';
 $id = '';
 
 if (!empty($_GET['id_usu'])) {
@@ -16,7 +18,9 @@ if (!empty($_GET['id_usu'])) {
         $user_data = $result->fetch_assoc();
         $nome = $user_data['nome'];
         $email = $user_data['email'];
+        $telefone = $user_data['telefone'];
         $senha = $user_data['senha'];
+        $mais = $user_data['mais'];
         $id = $user_data['id_usu'];
     } else {
         header('Location: perfil.php');
