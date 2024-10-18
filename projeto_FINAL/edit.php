@@ -83,6 +83,8 @@ if (!empty($_GET['id_usu'])) {
 
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                 <input class= "atualizar_button" type="submit" name="update" id="update" value="ATUALIZAR">
+
+                <
             </div>
         </form>
     </div>

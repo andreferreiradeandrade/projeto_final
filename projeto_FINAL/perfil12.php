@@ -15,7 +15,7 @@ $usuario = $_SESSION['usuario'];
 
 $sql = "SELECT * FROM usuario WHERE nome = ?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("i", $_SESSION['usuario']);
+$stmt->bind_param("s", $_SESSION['usuario']);
 $stmt->execute();
 $result = $stmt->get_result();
 

@@ -24,7 +24,7 @@
                 <input type="text" id="legenda" name="legenda" placeholder="Digite aqui o que precisa">
             </div>
 
-            <input type="submit" value="publicar">
+            <input type="submit" value="publicar" name= "submit" id= "submit">
           </div>
 
     </form>
