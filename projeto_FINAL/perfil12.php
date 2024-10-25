@@ -2,7 +2,7 @@
 session_start();
 
 
-if (empty($_SESSION['usuario'])) {
+if (empty($_SESSION['id_usu'])) {
     echo "<script>location.href='login.php';</script>"; // Redireciona para a página de login se não estiver logado
     exit;
 }
@@ -10,12 +10,12 @@ if (empty($_SESSION['usuario'])) {
 include_once('conexao.php'); 
 
 
-$usuario = $_SESSION['usuario'];
+$id_usuario = $_SESSION['id_usu'];
 
 
-$sql = "SELECT * FROM usuario WHERE nome = ?";
+$sql = "SELECT * FROM usuario WHERE id_usu = ?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("s", $_SESSION['usuario']);
+$stmt->bind_param("i", $_SESSION['id_usu']);
 $stmt->execute();
 $result = $stmt->get_result();
 
