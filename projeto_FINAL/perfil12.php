@@ -26,6 +26,13 @@ if ($result === false) {
 
 $user_data = $result->fetch_assoc();
 
+$sql = "SELECT * FROM publicacoes WHERE publi_id_usuarios = ?";
+$stmt = $con->prepare($sql);
+$stmt -> bind_param("i", $id_usuario);
+$stmt->execute();
+$publicacoes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+
 
 $stmt->close();
 $con->close();
@@ -105,20 +112,24 @@ $con->close();
 
   </div>
 
-
   <div class="publicacoes">
+<?php foreach ($publicacoes as $publicacao):
+  ?>
 
     <div class="cont_feed_publi">
       <div class="cont_feed_publi_dados">
+        <p class= "usu_info"><?php echo htmlspecialchars($user_data['nome'])?></p>
 
       </div>
 
       <div class="cont_feed_publi_text">
+        <p class = "publi_text"><?php echo htmlspecialchars($publicacao['legenda'])?></p>
       </div>
     </div>
 
-    
+    <?php endforeach;?>
   </div>
+
 
 
 
