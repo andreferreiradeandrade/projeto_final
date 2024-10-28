@@ -1,12 +1,8 @@
 <?php
-
 session_start();
-
-require_once('conexao.php');
-
-if (!isset($_SESSION['id_usu'])){
-    header('Location: login.php');
-    exit();
+if (empty($_SESSION['usuario'])) {
+    echo "<script>location.href='login.php';</script>"; // Redirecionar para a página de login se não estiver logado
+    exit;
 }
 
 include_once('conexao.php');
