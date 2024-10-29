@@ -2,7 +2,7 @@
 session_start();
 
 
-if (empty($_SESSION['usuario'])) {
+if (empty($_SESSION['id_usu'])) {
     echo "<script>location.href='login.php';</script>"; // Redireciona para a página de login se não estiver logado
     exit;
 }
@@ -10,12 +10,12 @@ if (empty($_SESSION['usuario'])) {
 include_once('conexao.php'); 
 
 
-$usuario = $_SESSION['usuario'];
+$id_usuario = $_SESSION['id_usu'];
 
 
-$sql = "SELECT * FROM usuario WHERE nome = ?";
+$sql = "SELECT * FROM usuario WHERE id_usu = ?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("i", $_SESSION['usuario']);
+$stmt->bind_param("i", $_SESSION['id_usu']);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -25,6 +25,13 @@ if ($result === false) {
 
 
 $user_data = $result->fetch_assoc();
+
+$sql = "SELECT * FROM publicacoes WHERE publi_id_usuarios = ?";
+$stmt = $con->prepare($sql);
+$stmt -> bind_param("i", $id_usuario);
+$stmt->execute();
+$publicacoes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
 
 
 $stmt->close();
@@ -65,9 +72,9 @@ $con->close();
     
     <button class="cont_menu_lateral_bot"><img src="img/searchicon.png" class="cont_menu_lateral_botimg"></button>
     
-    <a href= "home.php"><button class="cont_menu_lateral_bot"><img src="img/homeicon.png" class="cont_menu_lateral_botimg"></button></a>
+    <a href= 'home.php'><button class="cont_menu_lateral_bot"><img src="img/homeicon.png" class="cont_menu_lateral_botimg"></button></a>
     
-    <button class="cont_menu_lateral_bot"><img src="img/posticon.png" class="cont_menu_lateral_botimg"></button>
+    <a href = 'criapubli.php'><button class="cont_menu_lateral_bot"><img src="img/posticon.png" class="cont_menu_lateral_botimg"></button></a>
     
     <button class="cont_menu_lateral_bot"><img src="img/menuicon.png" class="cont_menu_lateral_botimg"></button>
     
@@ -105,20 +112,24 @@ $con->close();
 
   </div>
 
-
   <div class="publicacoes">
+<?php foreach ($publicacoes as $publicacao):
+  ?>
 
     <div class="cont_feed_publi">
       <div class="cont_feed_publi_dados">
+        <p class= "usu_info"><?php echo htmlspecialchars($user_data['nome'])?></p>
 
       </div>
 
       <div class="cont_feed_publi_text">
+        <p class = "publi_text"><?php echo htmlspecialchars($publicacao['legenda'])?></p>
       </div>
     </div>
 
-    
+    <?php endforeach;?>
   </div>
+
 
 
 

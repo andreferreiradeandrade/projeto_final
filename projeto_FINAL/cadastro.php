@@ -53,9 +53,9 @@
 
       <div class="cat_space">
       <label class="formulario_lab_cat_op">Produtor</label>
-      <input class="formulario_inp_cat" type="radio" name="cat" value="Produtor">
+      <input class="formulario_inp_cat" type="radio" name="cat" value="1">
       <label class="formulario_lab_cat_op">Artista</label>
-      <input class="formulario_inp_cat" type="radio" name="cat" value="Artista">
+      <input class="formulario_inp_cat" type="radio" name="cat" value="0">
       </div>
       
     </div>
