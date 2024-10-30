@@ -15,12 +15,12 @@ publi_id_usuarios int,
 foreign key (publi_id_usuarios) references usuario (id_usu));
 
 create table comentario(
-id_coment int not null,
-data_hora datetime not null,
+id_coment int not null primary key,
+data_hora datetime default current_timestamp,
 conteudo varchar(100) not null,
-publicacao_id_publi int not null,
-publicacao_usuario_id_usu int not null,
-foreign key (publicacao_id_publi) references publicacao (id_publi),
-foreign key (publicacao_usuario_id_usu) references usuario (id_usu));
+usuario_id int not null,
+publicacao_id int not null,
+foreign key (usuario_id) references usuario (id_usu),
+foreign key (publicacao_id) references publicacoes (id_publi));
 
 ALTER TABLE usuario MODIFY id_usu INT NOT NULL AUTO_INCREMENT;
