@@ -135,16 +135,17 @@ body {
     background-color: #4a475d;
     width: 600px;
     height: 80px;
- 
     border-radius: 10px 10px 0px 0px;
     margin-top: 40px;
     display: flex;
+    justify-content: left;
   }
 
   .usu_info{
     font-family: 'Montserrat';
     margin-left: 10px;
     color: white;
+    text-align: left;
   }
 
   .publi_text{
@@ -158,4 +159,28 @@ body {
     height: 100px;
     border-radius: 0px 0px 10px 10px;
     margin-bottom: 40px;
+  }
+
+  .botdelete{
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-self: right;
+    margin-top: 10px;
+  }
+
+  .deleteimg{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-self: right;
+  }
+
+  .botaodeletediv{
+    width: 800px;
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
   }

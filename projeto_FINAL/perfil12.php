@@ -32,7 +32,11 @@ $stmt -> bind_param("i", $id_usuario);
 $stmt->execute();
 $publicacoes = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-
+if(isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id_publi'])){
+  $id = $_GET['id_publi'];
+  $sqlexcluir = "DELETE FROM publicacoes WHERE id_publi='$id'";
+  $result_excluir = $con->query($sqlexcluir);
+}
 
 $stmt->close();
 $con->close();
@@ -48,7 +52,7 @@ $con->close();
 <head>
 
   <meta charset="utf-8">
-  <title>perfil</title>
+  <title>Perfil</title>
   <link href="styleperfil.css" rel="stylesheet" type="text/css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,9 +89,7 @@ $con->close();
 <div class="cont">
   
   <div class="infos_perfil">
-
-    <div class="foto_perfil"></div>
-
+    <div class= "foto_perfil"></div>
   </div>
 
   <div class="infos_txt">
@@ -119,6 +121,10 @@ $con->close();
     <div class="cont_feed_publi">
       <div class="cont_feed_publi_dados">
         <p class= "usu_info"><?php echo htmlspecialchars($user_data['nome'])?></p>
+
+        <div class= "botaodeletediv">
+        <a href='perfil12.php?action=delete&id_publi=<?= $publicacao['id_publi'] ?>' onclick="return confirm('Tem certeza que deseja excluir esta publicação?');"><button class= "botdelete"><img src= "img/delete.png" class= "deleteimg"/></button></a>
+</div>
 
       </div>
 

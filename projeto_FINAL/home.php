@@ -16,10 +16,10 @@
     $id_usu = $_SESSION['id_usu'];
     $sql = "SELECT * FROM usuario WHERE id_usu = ?";
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $id_usu); // Correção
+    $stmt->bind_param("i", $id_usu); 
     $stmt->execute();
     $result = $stmt->get_result();
-    $categoria = $result->fetch_assoc()['categoria']; // Correção
+    $categoria = $result->fetch_assoc()['categoria']; 
 
     // consulta para obter todas as publicações na ordem correta
     $sql = "SELECT p.*, u.nome, u.categoria
@@ -27,7 +27,7 @@
     JOIN usuario u ON p.publi_id_usuarios = u.id_usu
     ORDER BY CASE WHEN u.categoria = ? THEN 0 ELSE 1 END, p.id_publi DESC";
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("s", $categoria); // Correção: deve ser o tipo correto
+    $stmt->bind_param("s", $categoria);
     $stmt->execute();
     $result = $stmt->get_result();
     $categoria_usu= "";
@@ -45,7 +45,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Home</title>
   <link href="stylehome.css?v=<?= time(); ?>" rel="stylesheet" type="text/css"/>
 
   
@@ -128,11 +128,14 @@
           <div class = "img_category_back">
           <img class="img_category" src ="<?php echo $img_cat;?>"/>
   </div>
+  <p class= "data"><?php echo htmlspecialchars($publicacao['data_e_hora'])?></p>
         </div>
+    
 
         <div class="cont_feed_publi_text">
           <p class= "publi_text"><?php echo htmlspecialchars($publicacao['legenda']);?></p>
         </div>
+
       </div>
 
 

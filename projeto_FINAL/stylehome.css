@@ -131,6 +131,7 @@ body {
     align-content: center;
     margin-left: 15px;
     margin-top: 5px;
+    margin-right: 10px;
   }
 
   .img_category {
@@ -155,6 +156,12 @@ body {
   
   .space_cont_bar {
     height: 200px;
+  }
+
+  .data{
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 10px;
   }
   
   

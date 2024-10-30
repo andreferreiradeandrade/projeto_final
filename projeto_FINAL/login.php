@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Login</title>
   <link href="stylelogin.css" rel="stylesheet" type="text/css" />
   <link href="reset.css" rel="stylesheet" type="text/css" />
 
