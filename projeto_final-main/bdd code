@@ -23,4 +23,11 @@ publicacao_id int not null,
 foreign key (usuario_id) references usuario (id_usu),
 foreign key (publicacao_id) references publicacoes (id_publi));
 
+create table likes(
+id_like int not null primary key auto_increment,
+contador int not null,
+likes_id_usuarios int not null,
+likes_id_publi int not null,
+foreign key (likes_id_usuarios) references usuario(id_usu),
+foreign key (likes_id_publi) references publicacoes(id_publi));
 ALTER TABLE usuario MODIFY id_usu INT NOT NULL AUTO_INCREMENT;
