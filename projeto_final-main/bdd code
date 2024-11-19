@@ -1,5 +1,5 @@
 create table usuario(
-id_usu int not null primary key,
+id_usu int not null primary key auto_increment,
 nome varchar(45) not null,
 email varchar (70),
 categoria tinyint not null,
@@ -8,14 +8,14 @@ senha varchar(100) not null,
 mais varchar (100));
 
 create table publicacoes(
-id_publi int not null primary key,
+id_publi int not null primary key auto_increment,
 legenda varchar(140) not null,
 data_e_hora datetime,
 publi_id_usuarios int,
 foreign key (publi_id_usuarios) references usuario (id_usu));
 
 create table comentario(
-id_coment int not null primary key,
+id_coment int not null primary key auto_increment,
 data_hora datetime default current_timestamp,
 conteudo varchar(100) not null,
 usuario_id int not null,
